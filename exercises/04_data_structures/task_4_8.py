@@ -19,3 +19,18 @@
 '''
 
 ip = '192.168.3.1'
+# answer
+ip = ip.split('.')
+out = '''
+{:<10}{:<10}{:<10}{:<10}
+{:<08}  {:<08}  {:<08}  {:<08}
+'''
+a = bin(int(ip[0]))
+a = a.lstrip('0b')
+b = bin(int(ip[1]))
+b = b.lstrip('0b')
+c = bin(int(ip[2]))
+c = c.lstrip('0b')
+d = bin(int(ip[3]))
+d = d.lstrip('0b')
+print(out.format(ip[0], ip[1], ip[2], ip[3], a, b, c, d))

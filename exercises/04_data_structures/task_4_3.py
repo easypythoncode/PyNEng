@@ -10,3 +10,9 @@
 '''
 
 config = 'switchport trunk allowed vlan 1,3,10,20,30,100'
+# answer
+print(config)
+vlans = config.split()  # преобразуем в список из строк с разбивкой по пробельным символам
+print(vlans)
+vlans = vlans[-1].split(',')  # преобразуем последню строку в списке в новый список строк с разбивкой по запятой
+print(vlans)
