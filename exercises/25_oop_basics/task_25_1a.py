@@ -11,7 +11,6 @@
 При этом метод __init__ должен выглядеть таким образом:
 '''
 
-
 class Topology:
     def __init__(self, topology_dict):
         self.topology = self._normalize(topology_dict)
@@ -26,3 +25,4 @@ topology_example = {('R1', 'Eth0/0'): ('SW1', 'Eth0/1'),
                     ('SW1', 'Eth0/1'): ('R1', 'Eth0/0'),
                     ('SW1', 'Eth0/2'): ('R2', 'Eth0/0'),
                     ('SW1', 'Eth0/3'): ('R3', 'Eth0/0')}
+

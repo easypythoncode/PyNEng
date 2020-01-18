@@ -1,5 +1,5 @@
-import pytest
 import yaml
+import pytest
 from netmiko import ConnectHandler
 
 

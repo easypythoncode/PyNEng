@@ -1,11 +1,9 @@
-import sys
-
 import pytest
 import task_12_1
-
+import sys
 sys.path.append('..')
 
-from common_functions import check_function_exists, get_reach_unreach
+from common_functions import check_function_exists, ping, get_reach_unreach
 
 
 def test_function_created():

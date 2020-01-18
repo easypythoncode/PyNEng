@@ -10,6 +10,7 @@ except ImportError:
     print("pip install graphviz")
     sys.exit()
 
+
 styles = {
     'graph': {
         'label': 'Network Map',
@@ -36,7 +37,6 @@ styles = {
         'fontcolor': 'white',
     }
 }
-
 
 def apply_styles(graph, styles):
     graph.graph_attr.update(
@@ -65,6 +65,7 @@ def draw_topology(topology_dict, dest_filename='img/topology'):
     nodes = set([item[0]
                  for item in list(topology_dict.keys())
                  + list(topology_dict.values())])
+
 
     g1 = gv.Graph(format='svg')
 

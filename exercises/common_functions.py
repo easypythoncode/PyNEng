@@ -1,9 +1,10 @@
 import csv
 import inspect
-import re
-from concurrent.futures import ThreadPoolExecutor
 from platform import system as system_name
 from subprocess import run, PIPE
+from concurrent.futures import ThreadPoolExecutor
+import re
+import yaml
 
 stdout_incorrect_warning = '''
 Сообщение отличается от указанного в задании.

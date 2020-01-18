@@ -1,12 +1,10 @@
+import pytest
 import task_20_3a
 import sys
-import sys
-
-import task_20_3a
-
 sys.path.append('..')
 
 from common_functions import check_function_exists
+
 
 
 def test_functions_created():

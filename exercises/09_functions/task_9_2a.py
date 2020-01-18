@@ -24,3 +24,4 @@ trunk_config = {
     'FastEthernet0/2': [11, 30],
     'FastEthernet0/4': [17]
 }
+

@@ -1,5 +1,5 @@
-import pytest
 import yaml
+import pytest
 from netmiko import ConnectHandler
 
 
@@ -19,3 +19,4 @@ def r1_test_connection(first_router_from_devices_yaml):
     r1.enable()
     yield r1
     r1.disconnect()
+

@@ -11,9 +11,9 @@
 
 Например, если функции передать как аргументы список headers и список
 [('FastEthernet0/0', '10.0.1.1', 'up', 'up'),
- 'FastEthernet0/1', '10.0.2.1', 'up', 'up')]
+ ('FastEthernet0/1', '10.0.2.1', 'up', 'up')]
 
-Функция должна вернуть такой список со словарями (порядок полей может быть другой):
+Функция должна вернуть такой список со словарями:
 [{'interface': 'FastEthernet0/0', 'address': '10.0.1.1', 'status': 'up', 'protocol': 'up'},
  {'interface': 'FastEthernet0/1', 'address': '10.0.2.1', 'status': 'up', 'protocol': 'up'}]
 

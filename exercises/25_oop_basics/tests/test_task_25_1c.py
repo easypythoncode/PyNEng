@@ -1,8 +1,7 @@
+import pytest
 import warnings
-import warnings
-
 import task_25_1c
-
+import sys
 sys.path.append('..')
 
 from common_functions import (check_class_exists, check_attr_or_method,
@@ -45,3 +44,4 @@ def test_method_delete_node(normalized_topology_example, capsys):
     node_msg = 'Такого устройства нет'
     if not node_msg in out:
         warnings.warn(UserWarning(stdout_incorrect_warning.format(node_msg, out)))
+

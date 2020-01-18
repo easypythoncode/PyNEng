@@ -1,9 +1,8 @@
-import os
-import sys
-
-import task_22_4
 import textfsm
-
+import os
+import pytest
+import task_22_4
+import sys
 sys.path.append('..')
 
 from common_functions import check_function_exists

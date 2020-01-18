@@ -1,11 +1,7 @@
+import pytest
 import task_27_2
 from netmiko.cisco.cisco_ios import CiscoIosBase
 import sys
-import sys
-
-import task_27_2
-from netmiko.cisco.cisco_ios import CiscoIosBase
-
 sys.path.append('..')
 
 from common_functions import check_class_exists, check_attr_or_method

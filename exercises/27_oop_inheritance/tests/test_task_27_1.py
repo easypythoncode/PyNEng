@@ -1,11 +1,7 @@
+import pytest
 import task_27_1
 from base_connect_class import BaseSSH
 import sys
-import sys
-
-import task_27_1
-from base_connect_class import BaseSSH
-
 sys.path.append('..')
 
 from common_functions import check_class_exists, check_attr_or_method

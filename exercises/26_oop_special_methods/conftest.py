@@ -1,5 +1,6 @@
-import pytest
+import re
 import yaml
+import pytest
 from netmiko import ConnectHandler
 
 
@@ -49,3 +50,4 @@ def r1_test_telnet_connection():
     r1.enable()
     yield r1
     r1.disconnect()
+

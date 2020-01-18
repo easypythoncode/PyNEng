@@ -1,11 +1,10 @@
 import os
-import sys
-
+import pytest
 import task_25_2a
-
+import sys
 sys.path.append('..')
 
-from common_functions import check_class_exists
+from common_functions import check_class_exists, check_attr_or_method, strip_empty_lines
 
 
 def test_class_created():

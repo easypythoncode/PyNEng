@@ -1,6 +1,6 @@
-import os
-
+import pytest
 import task_22_1
+import os
 
 
 def test_templates_exists():

@@ -1,11 +1,13 @@
-import sys
+import re
 
+import yaml
 import pytest
 import task_19_2b
-
+import sys
 sys.path.append('..')
 
 from common_functions import check_function_exists
+
 
 correct_return_value = (
     {'ip http server': 'config term\n'
@@ -58,7 +60,6 @@ def test_function_return_value(capsys, first_router_from_devices_yaml):
     assert return_good.keys() == correct_good.keys() and \
            return_bad.keys() == correct_bad.keys(), \
         "Функция возвращает неправильное значение"
-
 
 @pytest.mark.parametrize("error,command", [
     ('Invalid input detected', 'logging 0255.255.1'),

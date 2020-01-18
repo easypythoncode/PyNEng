@@ -1,9 +1,6 @@
+import pytest
 import task_9_1a
 import sys
-import sys
-
-import task_9_1a
-
 sys.path.append('..')
 
 from common_functions import check_function_exists, check_function_params
@@ -88,3 +85,4 @@ def test_function_return_value():
     return_value_with_psecurity = task_9_1a.generate_access_config(
         access_vlans_mapping, template_access_mode, template_psecurity)
     assert return_value_with_psecurity == correct_return_value_with_psecurity, "Функция возвращает неправильное значение при вызове с psecurity"
+

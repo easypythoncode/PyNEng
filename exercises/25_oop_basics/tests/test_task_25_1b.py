@@ -1,12 +1,12 @@
+import pytest
+import warnings
 import task_25_1b
 import sys
-import sys
-
-import task_25_1b
 
 sys.path.append('..')
 
-from common_functions import (check_class_exists)
+from common_functions import (check_class_exists, check_attr_or_method,
+                              stdout_incorrect_warning)
 
 
 def test_class_created():
@@ -39,8 +39,9 @@ def test_method_delete_link(normalized_topology_example, capsys):
     norm_top.delete_link(('R5', 'Eth0/0'), ('R3', 'Eth0/2'))
     assert ('R3', 'Eth0/2') not in norm_top.topology
 
-    # проверка удаления несуществующего линка
+    #проверка удаления несуществующего линка
     norm_top.delete_link(('R8', 'Eth0/2'), ('R9', 'Eth0/1'))
     out, err = capsys.readouterr()
     link_msg = 'Такого соединения нет'
     assert link_msg in out
+

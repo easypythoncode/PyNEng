@@ -1,6 +1,7 @@
-import pytest
 import yaml
+import pytest
 from netmiko import ConnectHandler
+
 
 
 @pytest.fixture(scope='module')

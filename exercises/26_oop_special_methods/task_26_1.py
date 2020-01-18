@@ -71,3 +71,4 @@ topology_example = {('R1', 'Eth0/0'): ('SW1', 'Eth0/1'),
 
 topology_example2 = {('R1', 'Eth0/4'): ('R7', 'Eth0/0'),
                      ('R1', 'Eth0/6'): ('R9', 'Eth0/0')}
+

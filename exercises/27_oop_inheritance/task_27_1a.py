@@ -30,3 +30,4 @@ device_params = {
     'device_type': 'cisco_ios',
     'ip': '192.168.100.1'
 }
+

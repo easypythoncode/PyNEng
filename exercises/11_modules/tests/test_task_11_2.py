@@ -1,8 +1,7 @@
+import pytest
 import task_11_2
+import glob
 import sys
-
-import task_11_2
-
 sys.path.append('..')
 
 from common_functions import check_function_exists, check_function_params, unify_topology_dict
@@ -35,6 +34,7 @@ def test_function_return_value():
                             ('R3', 'Eth0/2'): ('R5', 'Eth0/0'),
                             ('R6', 'Eth0/1'): ('SW1', 'Eth0/5')}
 
+
     return_value = task_11_2.create_network_map(glob.glob('sh_cdp_n_*'))
     assert return_value != None, "Функция ничего не возвращает"
     assert type(return_value) == dict, "Функция должна возвращать словарь"
@@ -42,3 +42,4 @@ def test_function_return_value():
         correct_return_value), "В словаре, который описывает топологию есть дублирующиеся линки"
     unified_return_value = unify_topology_dict(return_value)
     assert unified_return_value == correct_return_value, "Функция возвращает неправильное значение"
+

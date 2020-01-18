@@ -1,9 +1,6 @@
+import pytest
 import task_25_1a
 import sys
-import sys
-
-import task_25_1a
-
 sys.path.append('..')
 
 from common_functions import check_class_exists, check_attr_or_method

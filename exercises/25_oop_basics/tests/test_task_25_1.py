@@ -1,9 +1,6 @@
+import pytest
 import task_25_1
 import sys
-import sys
-
-import task_25_1
-
 sys.path.append('..')
 
 from common_functions import check_class_exists, check_attr_or_method
@@ -43,3 +40,4 @@ def test_topology_normalization():
 
     top_with_data = task_25_1.Topology(topology_with_dupl_links)
     assert len(top_with_data.topology) == len(normalized_topology_example)
+

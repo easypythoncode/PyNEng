@@ -1,9 +1,6 @@
+import pytest
 import task_9_1
 import sys
-import sys
-
-import task_9_1
-
 sys.path.append('..')
 
 from common_functions import check_function_exists, check_function_params
@@ -52,3 +49,4 @@ def test_function_return_value():
     assert return_value != None, "Функция ничего не возвращает"
     assert type(return_value) == list, "Функция должна возвращать список"
     assert return_value == correct_return_value, "Функция возвращает неправильное значение"
+

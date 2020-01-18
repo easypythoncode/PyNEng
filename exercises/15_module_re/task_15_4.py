@@ -22,3 +22,4 @@ interface Loopback0
 
 Проверить работу функции на примере файла config_r1.txt.
 '''
+

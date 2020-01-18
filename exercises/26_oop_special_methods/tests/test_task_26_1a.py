@@ -1,8 +1,6 @@
-import sys
-
 import pytest
 import task_26_1a
-
+import sys
 sys.path.append('..')
 
 from common_functions import check_class_exists, check_attr_or_method
@@ -31,3 +29,4 @@ def test_iterable(normalized_topology_example):
         iterator = iter(top1)
     except TypeError as error:
         pytest.fail('Экземпляр класса Topology не итерируемый объект\n', error)
+

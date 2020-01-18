@@ -1,9 +1,6 @@
+import pytest
 import task_19_1
 import sys
-import sys
-
-import task_19_1
-
 sys.path.append('..')
 
 from common_functions import check_function_exists
@@ -25,3 +22,4 @@ def test_function_return_value(r1_test_connection, first_router_from_devices_yam
     assert return_value != None, "Функция ничего не возвращает"
     assert type(return_value) == str, "Функция должна возвращать строку"
     assert return_value == correct_return_value, "Функция возвращает неправильное значение"
+

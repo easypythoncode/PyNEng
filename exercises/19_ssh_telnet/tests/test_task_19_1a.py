@@ -1,9 +1,6 @@
+import pytest
 import task_19_1a
 import sys
-import sys
-
-import task_19_1a
-
 sys.path.append('..')
 
 from common_functions import check_function_exists

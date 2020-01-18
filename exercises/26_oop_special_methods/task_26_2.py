@@ -41,3 +41,4 @@ ValueError                                Traceback (most recent call last)
 
 ValueError: Возникла ошибка
 '''
+

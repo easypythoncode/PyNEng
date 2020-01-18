@@ -1,9 +1,6 @@
+import pytest
 import task_21_1
 import sys
-import sys
-
-import task_21_1
-
 sys.path.append('..')
 
 from common_functions import check_function_exists, strip_empty_lines

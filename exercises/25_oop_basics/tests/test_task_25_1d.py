@@ -1,8 +1,7 @@
+import pytest
 import warnings
-import warnings
-
 import task_25_1d
-
+import sys
 sys.path.append('..')
 
 from common_functions import (check_class_exists, check_attr_or_method,
@@ -43,9 +42,10 @@ def test_method_add_link(normalized_topology_example, capsys):
     if not link_msg in out:
         warnings.warn(UserWarning(stdout_incorrect_warning.format(link_msg, out)))
 
-    # проверка добавления линка с существующим портом
+    #проверка добавления линка с существующим портом
     norm_top.add_link(('R1', 'Eth0/4'), ('R7', 'Eth0/5'))
     out, err = capsys.readouterr()
     port_msg = 'Cоединение с одним из портов существует'
     if not port_msg in out:
         warnings.warn(UserWarning(stdout_incorrect_warning.format(port_msg, out)))
+

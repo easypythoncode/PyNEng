@@ -1,11 +1,10 @@
 import os
-import sys
-
+import pytest
 import task_21_1
-
+import sys
 sys.path.append('..')
 
-from common_functions import strip_empty_lines
+from common_functions import check_function_exists, strip_empty_lines
 
 
 def test_templates_exists():

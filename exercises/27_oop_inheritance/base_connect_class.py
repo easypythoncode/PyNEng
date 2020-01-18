@@ -10,3 +10,4 @@ class BaseSSH:
 
     def send_cfg_commands(self, commands):
         return self.ssh.send_config_set(commands)
+
