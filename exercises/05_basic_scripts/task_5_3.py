@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Задание 5.3
 
 Скрипт должен запрашивать у пользователя:
@@ -43,15 +43,36 @@ interface Fa0/7
 switchport trunk encapsulation dot1q
 switchport mode trunk
 switchport trunk allowed vlan 2,3,4,5
-'''
+"""
 
-access_template = [
-    'switchport mode access', 'switchport access vlan {}',
-    'switchport nonegotiate', 'spanning-tree portfast',
-    'spanning-tree bpduguard enable'
-]
+# access_template = [
+#     'switchport mode access', 'switchport access vlan {}',
+#     'switchport nonegotiate', 'spanning-tree portfast',
+#     'spanning-tree bpduguard enable'
+# ]
+#
+# trunk_template = [
+#     'switchport trunk encapsulation dot1q', 'switchport mode trunk',
+#     'switchport trunk allowed vlan {}'
+# ]
 
-trunk_template = [
-    'switchport trunk encapsulation dot1q', 'switchport mode trunk',
-    'switchport trunk allowed vlan {}'
+# answer
+mode = (input('Введите режим работы интерфейса (access/trunk): '))  # <class 'str'>
+interface = (input('Введите тип и номер интерфейса: '))
+vlan = (input('Введите номер влан(ов): '))
+
+summ_template = [
+    ['switchport mode access',
+     'switchport access vlan {}',
+     'switchport nonegotiate',
+     'spanning-tree portfast',
+     'spanning-tree bpduguard enable'],
+    ['switchport trunk encapsulation dot1q',
+     'switchport mode trunk',
+     'switchport trunk allowed vlan {}']
 ]
+mode = mode.count('trunk')
+
+print('-' * 30)
+print('interface {}'.format(interface))
+print('\n'.join(summ_template[mode]).format(vlan))

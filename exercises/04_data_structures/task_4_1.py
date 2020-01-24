@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Задание 4.1
 
 Обработать строку nat таким образом,
@@ -7,7 +7,7 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
-'''
+"""
 
 nat = 'ip nat inside source list ACL interface FastEthernet0/1 overload'
 # answer
