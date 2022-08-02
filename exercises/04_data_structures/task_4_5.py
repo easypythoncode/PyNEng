@@ -28,3 +28,6 @@ vlans1 = command1.split()[-1].split(',')
 vlans2 = command2.split()[-1].split(',')
 result = sorted(set(vlans1) & set(vlans2))
 print(result)
+
+# result = sorted(set(vlans1 + vlans2)) # обединяем 2 списка и убираем совпадения
+# print(result)

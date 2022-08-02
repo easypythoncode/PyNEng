@@ -25,5 +25,5 @@
 
 vlans = [10, 20, 30, 1, 2, 100, 10, 30, 3, 4, 10]
 # answer
-result = sorted(set(vlans))
+result = sorted(set(vlans))  # функция sorted() всегда возвращает список (функция set() передала ей множество)
 print(result)
