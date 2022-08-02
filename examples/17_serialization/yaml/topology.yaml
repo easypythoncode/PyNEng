@@ -1,0 +1,12 @@
+? !!python/tuple
+  - R4
+  - Fa0/1
+  : !!python/tuple
+  - R5
+  - Fa0/1
+? !!python/tuple
+  - R4
+  - Fa0/2
+  : !!python/tuple
+  - R6
+  - Fa0/0

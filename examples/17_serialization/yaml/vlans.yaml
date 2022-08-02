@@ -1,0 +1,9 @@
+sw2:
+  routing: true
+  vlans:
+    - 1
+    - 2
+    - 10
+true:
+  - sw1
+  - sw2
