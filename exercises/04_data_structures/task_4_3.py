@@ -23,6 +23,7 @@
 
 config = "switchport trunk allowed vlan 1,3,10,20,30,100"
 # answer
+# используется конвеер из result = (config.split()) и result = result[-1].split(',')
 # result = (config.split()) # преобразуем в список из строк с разбивкой по пробельным символам
 # result = result[-1].split(',') # преобразуем последню строку в списке в новый список строк по ','
 # print(result)

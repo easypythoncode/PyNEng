@@ -24,3 +24,7 @@ b = bin(int(mac[1], 16)).lstrip('0b')
 c = bin(int(mac[2], 16)).lstrip('0b')
 out = a + b + c
 print(out)
+
+# mac = "AAAA:BBBB:CCCC"
+# bin_mac = "{:b}".format(int(mac.replace(":", ""), 16))
+# print(bin_mac)
