@@ -8,11 +8,12 @@ print(template.format("10.2.2.101", 24, "g0/2"))
 # pprint(template.format("192.168.1.1", 8, "g0/1"))
 # pprint(template.format("10.2.2.101", 24, "g0/2"))
 
+print('-' * 32)
 ip = "10.1.1.1"
 mask = 24
 intf = "g0/0"
-print(f"{ip:20}{mask}{intf}")
+print(f"{ip:20}{mask:<4}{intf}")
 ip = "10.2.2.2"
 mask = 24
 intf = "g0/0"
-print(f"{ip:20}{mask}{intf}")
+print(f"{ip:20}{mask:<4}{intf}")
