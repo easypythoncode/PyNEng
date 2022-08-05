@@ -49,3 +49,33 @@ bin_ip = "00001010000000010000000111000011"
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+
+# answer
+network = input('Введите адрес сети в формате ip/mask: ')
+# разделяем ip и mask
+ip = (network.split('/')[0]).split('.')
+mask = int(network.split('/')[1])
+# преобразуем ip в bin
+template0 = """
+{0:08b}{1:08b}{2:08b}{3:08b}
+"""
+ipbin = template0.format(int(ip[0]), int(ip[1]), int(ip[2]), int(ip[3]))
+# делаем срез ip по маске и заменяем вырезанное нулями (эквивалентно ip & mask) + удаляем пробельные символы
+ipbin = (ipbin[:(mask + 1)] + str('0' * (32 - mask))).strip()
+# выводим Network
+template1 = """
+Network:
+{0:<10}{1:<10}{2:<10}{3:<10}
+{0:08b}  {1:08b}  {2:08b}  {3:08b}
+"""
+print(template1.format(int(ipbin[0:8], 2), int(ipbin[8:16], 2), int(ipbin[16:24], 2), int(ipbin[24:32], 2)))
+# выводим Mask
+maskbin = '1' * mask + '0' * (32 - mask)
+template2 = """
+Mask:
+/{0:}
+{1:<10}{2:<10}{3:<10}{4:<10}
+{1:08b}  {2:08b}  {3:08b}  {4:08b}
+"""
+print(template2.format(int(mask), int(maskbin[0:8], 2), int(maskbin[8:16], 2), int(maskbin[16:24], 2),
+                       int(maskbin[24:32], 2)))
