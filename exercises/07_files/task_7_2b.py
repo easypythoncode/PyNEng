@@ -17,3 +17,17 @@
 """
 
 ignore = ["duplex", "alias", "configuration"]
+
+# answer
+from sys import argv
+
+src, dst = argv[1], argv[2]
+with open(src) as f, open(dst, 'w') as f1:
+    for list in f:
+        if list.startswith('!'):
+            continue
+        for element in ignore:
+            if element in list:
+                break
+        else:
+            f1.write(list)
