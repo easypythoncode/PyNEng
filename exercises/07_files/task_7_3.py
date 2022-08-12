@@ -26,6 +26,5 @@ with open('CAM_table.txt') as f:
     for line in f:
         if '/' in line:
             line = line.split()
-            # print(line)
             vlan, mac, type, port = line
             print('{:8}{:18}{:9}'.format(vlan, mac, port))
