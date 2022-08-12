@@ -40,3 +40,17 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+
+# answer
+result = []
+with open('CAM_table.txt') as f:
+    for line in f:
+        if '/' in line:
+            line = line.split()
+            element = int(line.pop(0))
+            line.insert(0, element)
+            result.append(line)
+result.sort()
+for line in result:
+    vlan, mac, type, port = line[0], line[1], line[2], line[3]
+    print('{:<8}{:18}{:9}'.format(vlan, mac, port))
