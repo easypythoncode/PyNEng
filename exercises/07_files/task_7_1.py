@@ -14,3 +14,15 @@ Outbound Interface    FastEthernet0/0
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+
+# answer
+list = ['Prefix', 'AD/Metric', 'Next-Hop', 'Last update', 'Outbound Interface']
+with open('ospf.txt') as f:
+    for line in f:
+        line = line.split()
+        a6, prefix, metric, a3, hope, update, int = line
+        print('{:20}{}'.format(list[0], prefix))
+        print('{:20}{}'.format(list[1], metric.strip('[]')))
+        print('{:20}{}'.format(list[2], hope.rstrip(',')))
+        print('{:20}{}'.format(list[3], update.rstrip(',')))
+        print('{:20}{}'.format(list[4], int))
