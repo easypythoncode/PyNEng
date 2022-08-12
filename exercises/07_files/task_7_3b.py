@@ -17,3 +17,19 @@ Enter VLAN number: 10
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+
+# answer
+uservlan = input('Введите номер Vlan: ')
+result = []
+with open('CAM_table.txt') as f:
+    for line in f:
+        if '/' in line:
+            line = line.split()
+            element = int(line.pop(0))
+            line.insert(0, element)
+            result.append(line)
+result.sort()
+for line in result:
+    vlan, mac, type, port = line[0], line[1], line[2], line[3]
+    if int(uservlan) == vlan:
+        print('{:<8}{:18}{:9}'.format(vlan, mac, port))
