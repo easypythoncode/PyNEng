@@ -46,3 +46,25 @@ trunk_config = {
     "FastEthernet0/2": [11, 30],
     "FastEthernet0/4": [17],
 }
+
+
+# answer
+def generate_trunk_config(intf_vlan_mapping, trunk_template):
+    result = {}
+    for key, value in intf_vlan_mapping.items():
+        value_list = []
+        for command in trunk_template:
+            if command.endswith('allowed vlan'):
+                vlans = []
+                for element in value:
+                    vlans.append(str(element))
+                list = ','.join(vlans)
+                value_list.append(f'{command} {list}')
+            else:
+                value_list.append(command)
+        result[key] = value_list
+    return result
+
+
+list = generate_trunk_config(trunk_config, trunk_mode_template)
+print(list)
