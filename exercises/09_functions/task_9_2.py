@@ -61,7 +61,6 @@ trunk_config_2 = {
     "FastEthernet0/14": [117],
 }
 
-
 # answer
 def generate_trunk_config(intf_vlan_mapping, trunk_template):
     result = []
