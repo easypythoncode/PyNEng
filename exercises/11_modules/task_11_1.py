@@ -43,6 +43,16 @@ def parse_cdp_neighbors(command_output):
     и с файлами и с выводом с оборудования.
     Плюс учимся работать с таким выводом.
     """
+    result = {}
+    for line in command_output.split("\n"):
+        elements = (line.strip()).split()
+        print(elements)
+        if ">" in line:
+            hostname = line.split(">")[0]
+        elif len(elements) > 8 and elements[3].isdigit():
+            host, int_l1, int_l2, *other, int_r1, int_r2 = elements
+            result[(hostname, int_l1 + int_l2)] = (host, int_r1 + int_r2)
+    return result
 
 
 if __name__ == "__main__":
