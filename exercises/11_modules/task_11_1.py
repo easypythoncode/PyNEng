@@ -46,7 +46,6 @@ def parse_cdp_neighbors(command_output):
     result = {}
     for line in command_output.split("\n"):
         elements = (line.strip()).split()
-        print(elements)
         if ">" in line:
             hostname = line.split(">")[0]
         elif len(elements) > 8 and elements[3].isdigit():
