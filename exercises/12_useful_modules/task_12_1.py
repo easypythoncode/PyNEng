@@ -41,3 +41,4 @@ def ping_ip_addresses(ip_adress):
 if __name__ == "__main__":
     list = ping_ip_addresses(['8.8.8.8', '9.9.9.a'])
     print(list)
+    # print(ping_ip_addresses(['8.8.8.8', '9.9.9.a']))
