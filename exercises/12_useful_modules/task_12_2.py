@@ -36,7 +36,6 @@
 """
 
 # answer
-from task_12_1 import ping_ip_addresses
 
 
 def convert_ranges_to_ip_list(value):
