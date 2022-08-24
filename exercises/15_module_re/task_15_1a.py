@@ -33,7 +33,6 @@ import re
 def get_ip_from_cfg(file):
     dict = {}
     regex1 = r'^(interface) (\S+)'
-    # regex1 = r'(^interface \S+)'
     regex2 = r' ip address (\S+) (\S+)'
     with open(file) as f:
         for line in f:
@@ -42,7 +41,7 @@ def get_ip_from_cfg(file):
             if match1:
                 key = match1.group(2)
                 continue
-            if match2:
+            elif match2:
                 dict[key] = match2.groups()
     return dict
 
