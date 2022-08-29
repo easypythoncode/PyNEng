@@ -44,8 +44,46 @@
 """
 
 import glob
+import re
+import csv
+from pprint import pprint
 
-sh_version_files = glob.glob("sh_vers*")
-# print(sh_version_files)
 
-headers = ["hostname", "ios", "image", "uptime"]
+def write_inventory_to_csv(data_filenames, csv_filename):
+    data = []
+    headers = ["hostname", "ios", "image", "uptime"]
+    data.append(headers)
+    regex = r'_\S+_(\S+\d+).'
+    for file in data_filenames:
+        device = re.search(regex, file).group(1)
+        str = open(file).read()
+        call1 = parse_sh_version(str)
+        list = []
+        list.append(device)
+        for i in call1:
+            list.append(i)
+        data.append(list)
+    # print(data)
+    with open(csv_filename, 'w', newline='') as f:
+        wr = csv.writer(f)
+        for row in data:
+            wr.writerow(row)
+    # with open(csv_filename) as f:
+    #     print(f.read())
+    return
+
+
+def parse_sh_version(value):
+    value = re.sub(r'\n', ', ', value)
+    regex = r' Version (\S+), .+router uptime is (.+),.+ System image file is \"(\S+)\"'
+    data = re.search(regex, value)
+    ios, image, uptime = data.group(1), data.group(3), data.group(2)
+    cort = (ios, image, uptime)
+    # print(cort)
+    return cort
+
+
+if __name__ == "__main__":
+    sh_version_files = glob.glob("sh_vers*")
+    # print(sh_version_files)
+    call = write_inventory_to_csv(sh_version_files, 'routers_inventory.csv')
