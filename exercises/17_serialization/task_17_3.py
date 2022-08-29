@@ -34,7 +34,7 @@ from pprint import pprint
 def parse_sh_cdp_neighbors(value):
     list = value.split('\n')
     dict = {}
-    regex1 = r'(?P<key>\S+)>'
+    regex1 = r'(?P<ldev>\S+)>'
     regex2 = r'(?P<rdev>\S+\d+) +(?P<lintf>\S+ \d+/\d+).+  (?P<rintf>\S+ \d+/\d+)'
     for line in list:
         match1 = re.search(regex1, line)
